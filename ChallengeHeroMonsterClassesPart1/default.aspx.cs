@@ -42,12 +42,6 @@ public partial class _default : System.Web.UI.Page
             CharacterStats(Hero, false);
             CharacterStats(Monster, false);
 
-
-
-
-
-
-
         }
 
 
@@ -55,11 +49,11 @@ public partial class _default : System.Web.UI.Page
 
             if (Initial)
             {
-                lblInitial.Text += "Character Name: " + CharValues.Name + "     Health: " + CharValues.Health.ToString() + "<br/>";
+                lblInitial.Text += String.Format("Character Name: {0} -- Health: {1} -- Damage Maximum:  {2}  -- Attack Bonus:  {3}", CharValues.Name, CharValues.Health, CharValues.DamageMaximum, CharValues.AttackBonus) + "<br/>";
             }
             else
             {
-                lblPostRound.Text += "Character Name: " + CharValues.Name + "     Health: " + CharValues.Health.ToString() + "<br/>";
+                lblPostRound.Text += String.Format("Character Name: {0} -- Health: {1} -- Damage Maximum:  {2}  -- Attack Bonus:  {3}", CharValues.Name, CharValues.Health, CharValues.DamageMaximum, CharValues.AttackBonus) + "<br/>";
             }
 
 
@@ -84,7 +78,7 @@ public partial class _default : System.Web.UI.Page
 
         public int Attack()
         {   //Only allow the maximum amount (up to 2000) for a given hero (anything less, too, of course)
-            return Math.Min(AttackValue.Next(0, 200), DamageMaximum);
+            return Math.Min(AttackValue.Next(0, 200), DamageMaximum) + this.AttackBonus;
         }
 
         public void Defend(int damage)
