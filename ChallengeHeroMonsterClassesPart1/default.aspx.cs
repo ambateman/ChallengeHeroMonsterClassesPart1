@@ -8,10 +8,10 @@ using System.Web.UI.WebControls;
 namespace ChallengeHeroMonsterClassesPart1
 {
 
-   
 
 
-public partial class _default : System.Web.UI.Page
+
+    public partial class _default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ public partial class _default : System.Web.UI.Page
             //Initialize the result labels:
             lblInitial.Text = "Starting Out Stats: <br/>";
             lblPostRound.Text = "After One Round Each Stats: <br/>";
-            CharacterStats(Hero,true);
+            CharacterStats(Hero, true);
             CharacterStats(Monster, true);
 
             //FIGHT!
@@ -45,7 +45,8 @@ public partial class _default : System.Web.UI.Page
         }
 
 
-        private void CharacterStats(Character CharValues, bool Initial) {
+        private void CharacterStats(Character CharValues, bool Initial)
+        {
 
             if (Initial)
             {
@@ -58,11 +59,7 @@ public partial class _default : System.Web.UI.Page
 
 
         }
-
-
-
     }
-
 
     class Character
     {
@@ -91,7 +88,6 @@ public partial class _default : System.Web.UI.Page
 
 
     }
-
 
 
 
